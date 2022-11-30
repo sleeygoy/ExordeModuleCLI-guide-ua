@@ -1,4 +1,4 @@
-# Exorde Participation Module CLI v1.3.4a (Docker-UA) Guide
+# Exorde Participation Module CLI v1.3.4.2 (Docker-UA) Guide
 
 ### Мінімальні вимоги:
 
@@ -80,14 +80,7 @@ sudo systemctl status docker
 Команда запускає модуль у фоновому режимі та працює постійно.
 
 ```
-docker run \
--d \
---restart unless-stopped \
---pull always \
---name YOUR_NAME \
-rg.fr-par.scw.cloud/exorde-labs/exorde-cli \
--m <YOUR_MAIN_ADDRESS> \
--l <LOGGING_LEVEL>
+docker run --restart unless-stopped -d --pull always --name YOUR_NAME-cli exordelabs/exorde-cli -m <YOUR_MAIN_ADDRESS> -l LOGGING
 ```
 
 Одразу після запуску може відображатися версія 1.3.4a і помилка `[Faucet] Auto-Faucet n° 176 Failure... retrying. [Faucet] selecting Auto-Faucet n° 433` потрібно почекати 30 хв або більше, що б нода синхронізувалася, якщо цього не сталось, перезапустити ноду.
@@ -95,14 +88,8 @@ rg.fr-par.scw.cloud/exorde-labs/exorde-cli \
 * Приклад:
 
 ```
-docker run \
--d \
---restart unless-stopped \
---pull always \
---name exorde-cli \
-rg.fr-par.scw.cloud/exorde-labs/exorde-cli \
--m 0x16f17726399DfF6fc84AD013BD9bCB70F39b42d3 \
--l 2
+docker run --restart unless-stopped -d --pull always --name exorde-cli exordelabs/exorde-cli -m 0x16f17726399DfF6fc84AD013BD9bCB70F39b42d3 -l 2
+0x16f17726399DfF6fc84AD013BD9bCB70F39b42d3
 ```
 
 Даною командою можна створити кілька контейнерів з унікальною адресою воркера.
