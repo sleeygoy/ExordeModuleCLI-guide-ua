@@ -80,7 +80,14 @@ sudo systemctl status docker
 Команда запускає модуль у фоновому режимі та працює постійно.
 
 ```
-docker run --restart unless-stopped -d --pull always --name YOUR_NAME-cli exordelabs/exorde-cli -m <YOUR_MAIN_ADDRESS> -l LOGGING
+docker run \
+-d \
+--restart unless-stopped \
+--pull always \
+--name <CONTAINER_NAME> \
+exordelabs/exorde-cli \
+-m <YOUR_MAIN_ADDRESS> \
+-l <LOGGING_LEVEL>
 ```
 
 Одразу після запуску може відображатися версія 1.3.4a і помилка `[Faucet] Auto-Faucet n° 176 Failure... retrying. [Faucet] selecting Auto-Faucet n° 433` потрібно почекати 30 хв або більше, що б нода синхронізувалася, якщо цього не сталось, перезапустити ноду.
@@ -88,8 +95,14 @@ docker run --restart unless-stopped -d --pull always --name YOUR_NAME-cli exorde
 * Приклад:
 
 ```
-docker run --restart unless-stopped -d --pull always --name exorde-cli exordelabs/exorde-cli -m 0x16f17726399DfF6fc84AD013BD9bCB70F39b42d3 -l 2
-0x16f17726399DfF6fc84AD013BD9bCB70F39b42d3
+docker run \
+-d \
+--restart unless-stopped \
+--pull always \
+--name exorde \
+exordelabs/exorde-cli \
+-m 0x16f17726399DfF6fc84AD013BD9bCB70F39b42d3 \
+-l 2
 ```
 
 Даною командою можна створити кілька контейнерів з унікальною адресою воркера.
@@ -105,7 +118,7 @@ docker run --restart unless-stopped -d --pull always --name exorde-cli exordelab
 * 1 = без логів
 * 2 = загальна обробка логів
 * 3 = валідація + збір і аналіз логів
-* 4 = детальна валідація + збірка та аналіз логів (для усунення помилок)
+* 4 = (на данний момент не працює) детальна валідація + збірка та аналіз логів (для усунення помилок)
 ---
 
 ### Корисні команди:
