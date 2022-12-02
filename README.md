@@ -1,4 +1,4 @@
-# Exorde Participation Module CLI v1.3.4.2 (Docker-UA) Guide
+# Exorde Participation Module CLI v1.3.4.2b (Docker-UA) Guide
 
 ### Мінімальні вимоги:
 
@@ -13,7 +13,7 @@
 
 [Еxplorer Exorde](https://explorer.exorde.network/)
 
-[Еxplorer Skale](https://light-vast-diphda.explorer.mainnet.skalenodes.com/)
+[Еxplorer Skale](http://light-vast-diphda.legacy-explorer.skalenodes.com/)
 
 [Таблиця лідерів](https://explorer.exorde.network/leaderboard)
 
